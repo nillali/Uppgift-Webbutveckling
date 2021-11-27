@@ -1,0 +1,28 @@
+img{
+margin-left: 500px;
+width: 400px;
+text-align: center;
+}
+#Options-container{
+    margin: auto;
+    width: 900px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+#Search-Character{
+    margin-left: 10px;
+}
+#input-btn{
+    margin: 0 7px;
+}
+#Houses{
+    margin-left: 20px;
+}
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    width: 900px;
+    border: 1px solid darkolivegreen;
+    padding-top: 20px;
+}
