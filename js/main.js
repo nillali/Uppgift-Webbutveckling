@@ -5,18 +5,18 @@ let contentContainer = document.getElementById('container');
 let inputBtn = document.getElementById('input-btn');
 let selectedHouse = document.getElementById('houses');
 let houseBtn = document.getElementById('house-btn');
-let houseHouse = document.getElementsByClassName('houses1');
+let extraContainer = document.getElementById('extra-container');
 
 inputBtn.addEventListener('click', async function(){
- 
+    
     try {
         let response = await fetch('http://hp-api.herokuapp.com/api/characters')
         let data = await response.json();
         console.log(data);
         console.log(data[0].name);
         
-    for (let i = 0; i < 33; i++){
-        console.log(i);
+        for (let i = 0; i < 33; i++){
+            console.log(i);
             contentContainer.innerHTML += `
             <section> 
             <h2>${data[i].name} </h2>
@@ -25,26 +25,32 @@ inputBtn.addEventListener('click', async function(){
             </section>
             `;
             
-     }       
-} catch (error) {
-    console.log('error');
-}
+        }       
+    } catch (error) {
+        console.log('error');
+    }
 });
 
 houseBtn.addEventListener('click', async function(){
-try{
-    let response = await fetch('http://hp-api.herokuapp.com/api/characters/house/slytherin' + houseHouse.value)
-    let data = await response.json();
-    console.log(data);
+    let houseSearch = document.getElementById('house-search').value;
+    
+    try{
+        
+        let response = await fetch('http://hp-api.herokuapp.com/api/characters/house/' 
+        + houseSearch)
+        let data = await response.json();
+        console.log(data);
+        
+        for (let i = 0; i < 33; i++){
+            
+    extraContainer.innerHTML = `
+            <h1>${data[i].house}</h1>
+            `;
 
-    contentContainer.innerHTML = `
-    <h1>${houseHouse}</h1>
-    `;
-
-for (let i = 0; i < data.length; i++){
     contentContainer.innerHTML += `
             <section> 
             <h2>${data[i].name} </h2>
+            <p>(${data[i].house})</p>
             <a>Click here to se info of the character</a>
             </section>
             `;

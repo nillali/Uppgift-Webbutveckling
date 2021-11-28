@@ -18,6 +18,12 @@ text-align: center;
 #Houses{
     margin-left: 20px;
 }
+#extra-container{
+margin: auto;
+width: 900px;
+border: 1px solid red;
+margin-bottom: 20px;
+}
 #container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
