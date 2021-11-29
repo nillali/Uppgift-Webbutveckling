@@ -14,6 +14,11 @@ inputBtn.addEventListener('click', async function(){
         let data = await response.json();
         console.log(data);
         console.log(data[0].name);
+
+        
+        contentContainer.innerHTML = "";
+        extraContainer.innerHTML = "";
+        
         
         for (let i = 0; i < 33; i++){
             console.log(i);
@@ -41,6 +46,10 @@ inputBtn.addEventListener('click', async function(){
             + houseSearch)
             let data = await response.json();
             console.log(data);
+
+        
+            contentContainer.innerHTML = "";
+            
             
             for (let i = 0; i < 33; i++){
                 
