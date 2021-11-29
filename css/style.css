@@ -1,4 +1,4 @@
-img{
+#logo-img{
 margin-left: 500px;
 width: 400px;
 text-align: center;
@@ -21,7 +21,8 @@ text-align: center;
 #extra-container{
 margin: auto;
 width: 900px;
-border: 1px solid red;
+text-align: center;
+text-transform: uppercase;
 margin-bottom: 20px;
 }
 #container {
@@ -31,4 +32,10 @@ margin-bottom: 20px;
     width: 900px;
     border: 1px solid darkolivegreen;
     padding-top: 20px;
+}
+.profile-picture{
+    object-fit: cover;
+    width: 90px;
+    height: 120px;
+    margin: 0;
 }

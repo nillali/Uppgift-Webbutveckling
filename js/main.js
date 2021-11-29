@@ -21,6 +21,7 @@ inputBtn.addEventListener('click', async function(){
             <section> 
             <h2>${data[i].name} </h2>
             <p>(${data[i].house})</p>
+            <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img><br>
             <a href ='#'>Click here to se info of the character</a>
             </section>
             `;
@@ -29,28 +30,30 @@ inputBtn.addEventListener('click', async function(){
     } catch (error) {
         console.log('error');
     }
-});
-
-houseBtn.addEventListener('click', async function(){
-    let houseSearch = document.getElementById('house-search').value;
     
-    try{
+});
+    houseBtn.addEventListener('click', async function(){
+        let houseSearch = document.getElementById('house-search').value;
         
-        let response = await fetch('http://hp-api.herokuapp.com/api/characters/house/' 
-        + houseSearch)
-        let data = await response.json();
-        console.log(data);
-        
-        for (let i = 0; i < 33; i++){
+        try{
             
-    extraContainer.innerHTML = `
-            <h1>${data[i].house}</h1>
-            `;
-
+            let response = await fetch('http://hp-api.herokuapp.com/api/characters/house/' 
+            + houseSearch)
+            let data = await response.json();
+            console.log(data);
+            
+            for (let i = 0; i < 33; i++){
+                
+                extraContainer.innerHTML = `
+                <h1>${data[i].house}</h1>
+                `;
+                
+                
     contentContainer.innerHTML += `
             <section> 
             <h2>${data[i].name} </h2>
             <p>(${data[i].house})</p>
+            <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img><br>
             <a>Click here to se info of the character</a>
             </section>
             `;
