@@ -49,25 +49,26 @@ inputBtn.addEventListener('click', async function(){
         
             contentContainer.innerHTML = "";
             
-            
             for (let i = 0; i < 33; i++){
                 
                 extraContainer.innerHTML = `
                 <h1>${data[i].house}</h1>
                 `;
                 
+                contentContainer.innerHTML += `
+                <section> 
+                <h2>${data[i].name} </h2>
+                <p>(${data[i].house})</p>
+                <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img><br>
+                <a href ='#'>Click here to se info of the character</a>
+                </section>
+                `;
                 
-    contentContainer.innerHTML += `
-            <section> 
-            <h2>${data[i].name} </h2>
-            <p>(${data[i].house})</p>
-            <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img><br>
-            <a href ='#'>Click here to se info of the character</a>
-            </section>
-            `;
+            }
+            
+        }catch(error){
+            console.log(error);
+            extraContainer.innerHTML = "Något gick fel!";
         }
-    }catch(error){
-        console.log(error);
-        extraContainer.innerHTML = "Något gick fel!";
-    }
+        houseSearch.value = '';
 });

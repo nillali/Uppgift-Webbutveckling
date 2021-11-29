@@ -22,7 +22,7 @@ text-align: center;
 margin: auto;
 width: 900px;
 text-align: center;
-text-transform: uppercase;
+text-transform: capitalize;
 margin-bottom: 20px;
 }
 #container {
@@ -30,12 +30,23 @@ margin-bottom: 20px;
     grid-template-columns: repeat(3, 1fr);
     margin: auto;
     width: 900px;
-    border: 1px solid darkolivegreen;
     padding-top: 20px;
+}
+h2{
+    color: #001445;
+}
+section{
+    justify-self: center;
+    margin-bottom: 60px;
 }
 .profile-picture{
     object-fit: cover;
     width: 90px;
     height: 120px;
     margin: 0;
+    margin-bottom: 10px;
+}
+button, 
+input{
+    border-radius: 1px;
 }
