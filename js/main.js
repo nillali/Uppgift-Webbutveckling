@@ -42,8 +42,7 @@ inputBtn.addEventListener('click', async function(){
         
         try{
             
-            let response = await fetch('http://hp-api.herokuapp.com/api/characters/house/' 
-            + houseSearch)
+            let response = await fetch('http://hp-api.herokuapp.com/api/characters/house/' + houseSearch)
             let data = await response.json();
             console.log(data);
 
@@ -63,11 +62,12 @@ inputBtn.addEventListener('click', async function(){
             <h2>${data[i].name} </h2>
             <p>(${data[i].house})</p>
             <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img><br>
-            <a>Click here to se info of the character</a>
+            <a href ='#'>Click here to se info of the character</a>
             </section>
             `;
         }
     }catch(error){
         console.log(error);
+        extraContainer.innerHTML = "Något gick fel!";
     }
 });
