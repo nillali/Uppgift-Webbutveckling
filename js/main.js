@@ -20,15 +20,18 @@ inputBtn.addEventListener('click', async function(){
         extraContainer.innerHTML = "";
         
         
-        for (let i = 0; i < 33; i++){
+        for (let i = 0; i < 33; i++){ // Satte loopen medvetet till 33 för utseendets skull. Fanns inte tillräckligt med innehåll till karaktärena.
             console.log(i);
             contentContainer.innerHTML += `
-            <section> 
+        <section> 
             <h2>${data[i].name} </h2>
-            <p>(${data[i].house})</p>
-            <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img><br>
-            <a href ='#'>Click here to se info of the character</a>
-            </section>
+            <p>Actor: ${data[i].actor}</p>
+            <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img>
+            <p>House: ${data[i].house}</p>
+            <p>Ancestry: ${data[i].ancestry}</p>
+            <p>Patronus: ${data[i].patronus}</p>
+            <p>Gender: ${data[i].gender}</p>
+        </section>
             `;
             
         }       
@@ -56,19 +59,23 @@ inputBtn.addEventListener('click', async function(){
                 `;
                 
                 contentContainer.innerHTML += `
-                <section> 
+            <section> 
                 <h2>${data[i].name} </h2>
-                <p>(${data[i].house})</p>
-                <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img><br>
-                <a href ='#'>Click here to se info of the character</a>
-                </section>
+                <p>Actor: ${data[i].actor}</p>
+                <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img>
+                <p>House: ${data[i].house}</p>
+                <p>Ancestry: ${data[i].ancestry}</p>
+                <p>Patronus: ${data[i].patronus}</p>
+                <p>Gender: ${data[i].gender}</p>
+            </section>
                 `;
                 
             }
-            
+
         }catch(error){
             console.log(error);
             extraContainer.innerHTML = "Något gick fel!";
         }
         houseSearch.value = '';
 });
+
