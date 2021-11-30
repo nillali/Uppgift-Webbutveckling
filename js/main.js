@@ -1,5 +1,4 @@
-// https://hp-api.herokuapp.com/
-// insåg en bit in på arbetet att många av karaktärerna saknade en del innehåll - hoppas det är ok för uppgiften ändå..
+// Insåg en bit in på arbetet att många av karaktärerna saknade en del innehåll - hoppas det är ok för uppgiften ändå..
 
 
 let contentContainer = document.getElementById('container');
@@ -14,15 +13,12 @@ inputBtn.addEventListener('click', async function(){
         let response = await fetch('https://hp-api.herokuapp.com/api/characters')
         let data = await response.json();
         console.log(data);
-        console.log(data[0].name);
 
-        
         headlineContainer.innerHTML = "";
         contentContainer.innerHTML = "";
         
         
         for (let i = 0; i < 33; i++){ // Satte loopen medvetet till 33 för utseendets skull. Fanns inte tillräckligt med innehåll i karaktärena.
-            console.log(i);
             contentContainer.innerHTML += `
         <section> 
             <h2>${data[i].name} </h2>
@@ -50,7 +46,6 @@ inputBtn.addEventListener('click', async function(){
             let data = await response.json();
             console.log(data);
 
-        
             contentContainer.innerHTML = "";
             
             for (let i = 0; i < data.length; i++){
