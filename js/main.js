@@ -11,7 +11,7 @@ let headlineContainer = document.getElementById('headline-container');
 inputBtn.addEventListener('click', async function(){
     
     try {
-        let response = await fetch('http://hp-api.herokuapp.com/api/characters')
+        let response = await fetch('https://hp-api.herokuapp.com/api/characters')
         let data = await response.json();
         console.log(data);
         console.log(data[0].name);
@@ -46,7 +46,7 @@ inputBtn.addEventListener('click', async function(){
         
         try{
             
-            let response = await fetch('http://hp-api.herokuapp.com/api/characters/house/' + houseSearch)
+            let response = await fetch('https://hp-api.herokuapp.com/api/characters/house/' + houseSearch)
             let data = await response.json();
             console.log(data);
 
