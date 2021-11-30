@@ -6,7 +6,7 @@ let contentContainer = document.getElementById('container');
 let inputBtn = document.getElementById('input-btn');
 let selectedHouse = document.getElementById('houses');
 let houseBtn = document.getElementById('house-btn');
-let extraContainer = document.getElementById('extra-container');
+let headlineContainer = document.getElementById('headline-container');
 
 inputBtn.addEventListener('click', async function(){
     
@@ -17,8 +17,8 @@ inputBtn.addEventListener('click', async function(){
         console.log(data[0].name);
 
         
+        headlineContainer.innerHTML = "";
         contentContainer.innerHTML = "";
-        extraContainer.innerHTML = "";
         
         
         for (let i = 0; i < 33; i++){ // Satte loopen medvetet till 33 för utseendets skull. Fanns inte tillräckligt med innehåll i karaktärena.
@@ -55,7 +55,7 @@ inputBtn.addEventListener('click', async function(){
             
             for (let i = 0; i < data.length; i++){
                 
-                extraContainer.innerHTML = `
+                headlineContainer.innerHTML = `
                 <h1>${data[i].house}</h1>
                 `;
                 contentContainer.innerHTML += `
@@ -78,6 +78,7 @@ inputBtn.addEventListener('click', async function(){
         }
         
 });
+
 
 
 
