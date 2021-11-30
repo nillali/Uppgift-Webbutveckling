@@ -1,4 +1,5 @@
 // https://hp-api.herokuapp.com/
+// insåg en bit in på arbetet att många av karaktärerna saknade en del innehåll - hoppas det är ok för uppgiften ändå..
 
 
 let contentContainer = document.getElementById('container');
@@ -20,7 +21,7 @@ inputBtn.addEventListener('click', async function(){
         extraContainer.innerHTML = "";
         
         
-        for (let i = 0; i < 33; i++){ // Satte loopen medvetet till 33 för utseendets skull. Fanns inte tillräckligt med innehåll till karaktärena.
+        for (let i = 0; i < 33; i++){ // Satte loopen medvetet till 33 för utseendets skull. Fanns inte tillräckligt med innehåll i karaktärena.
             console.log(i);
             contentContainer.innerHTML += `
         <section> 
@@ -52,14 +53,13 @@ inputBtn.addEventListener('click', async function(){
         
             contentContainer.innerHTML = "";
             
-            for (let i = 0; i < 33; i++){
+            for (let i = 0; i < data.length; i++){
                 
                 extraContainer.innerHTML = `
                 <h1>${data[i].house}</h1>
                 `;
-                
                 contentContainer.innerHTML += `
-            <section> 
+                <section> 
                 <h2>${data[i].name} </h2>
                 <p>Actor: ${data[i].actor}</p>
                 <img class="profile-picture" src="${data[i].image}" alt="Picure of character"></img>
@@ -67,15 +67,17 @@ inputBtn.addEventListener('click', async function(){
                 <p>Ancestry: ${data[i].ancestry}</p>
                 <p>Patronus: ${data[i].patronus}</p>
                 <p>Gender: ${data[i].gender}</p>
-            </section>
+                </section>
                 `;
                 
             }
-
+            
         }catch(error){
             console.log(error);
             extraContainer.innerHTML = "Något gick fel!";
         }
-        houseSearch.value = '';
+        
 });
+
+
 
